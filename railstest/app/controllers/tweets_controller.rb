@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /tweets
   # GET /tweets.xml
   def index

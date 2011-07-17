@@ -7,6 +7,10 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<% if current_user %>
+<%= current_user.email %> | <%= link_to('Sign out',destroy_user_session_path) %>
+
+<% end %>
 
 <%= yield %>
 
