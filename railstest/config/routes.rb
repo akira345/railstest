@@ -1,4 +1,6 @@
 Railstest::Application.routes.draw do
+  resources :user_profiles
+
   devise_for :users
 
   resources :tweets

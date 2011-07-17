@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
  
  has_many:tweets
+ has_one:user_profile
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

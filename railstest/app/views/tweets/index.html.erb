@@ -1,5 +1,6 @@
 <h1>Listing tweets</h1>
-
+<%= render 'form' %>
+<hr />
 <table>
   <tr>
 <th>Time</th>
@@ -15,7 +16,11 @@
   <tr>
 <td><%= tweet.created_at.to_s(:db) %></td>
 <% user = tweet.user %>
-<td><%= user ? user.email : nil %></td>
+<td>
+	<%= user ? user.email : nil %>
+<%= link_to '(Profile)', :controller => :user_profiles, :action => :show, :id => user.user_profile.id if user && user.user_profile %>
+</td>
+
 
     <td><%= tweet.tweet %></td>
     <td><%= link_to 'Show', tweet %></td>
